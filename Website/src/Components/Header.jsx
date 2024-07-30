@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { RiArrowDropDownLine } from "react-icons/ri";
+import { FaAngleDown } from "react-icons/fa6";
 
 function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
-    const [galleryOpen, setGalleryOpen] = useState(false);
+    const [serviceOpen, setServiceOpen] = useState(false);
 
     const toggleMenu = () => {
         setMenuOpen((prev) => !prev);
@@ -11,20 +13,16 @@ function Header() {
 
     const closeMenu = () => {
         setMenuOpen(false);
-        setGalleryOpen(false);
-    };
-
-    const toggleGallery = () => {
-        setGalleryOpen((prev) => !prev);
+        setServiceOpen(false);
     };
 
     return (
-        <header className="shadow-md sticky z-50 top-0 rounded-b-lg bg-white">
-            <nav className="border-b border-gray-200 px-4 lg:px-6 py-2.5">
+        <header className=" sticky z-50 top-0 bg-white">
+            <nav className=" border-gray-200 px-4 lg:px-6 py-2.5">
                 <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
                     <Link to="/" className="flex items-center">
                         <img
-                            src="./eternalbgl.png"
+                            src="./eternal.png"
                             className="mr-3 h-12 rounded-full"
                             alt="Logo"
                             style={{ mixBlendMode: 'multiply' }}
@@ -85,12 +83,12 @@ function Header() {
                             </li>
                             <li className="relative">
                                 <button
-                                    onClick={toggleGallery}
-                                    className="font-bold text-gray-600 block py-2 pr-4 pl-3 duration-200 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-primary lg:p-0"
+                                    onClick={() => setServiceOpen((prev) => !prev)}
+                                    className="font-bold flex items-center text-gray-600 block py-2 pr-4 pl-3 duration-200 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-primary lg:p-0"
                                 >
-                                    Gallery
+                                    Services <FaAngleDown className='ml-1.5 mt-1.5' />
                                 </button>
-                                {galleryOpen && (
+                                {serviceOpen && (
                                     <ul className="absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg">
                                         <li>
                                             <NavLink
@@ -98,7 +96,7 @@ function Header() {
                                                 onClick={closeMenu}
                                                 className={({ isActive }) => `block px-4 py-2 text-sm font-bold ${isActive ? 'text-primary active' : 'text-gray-600'} hover:bg-gray-50 hover:text-primary`}
                                             >
-                                                Video Gallery
+                                                Web Application Development
                                             </NavLink>
                                         </li>
                                         <li>
@@ -107,7 +105,16 @@ function Header() {
                                                 onClick={closeMenu}
                                                 className={({ isActive }) => `block px-4 py-2 text-sm font-bold ${isActive ? 'text-primary active' : 'text-gray-600'} hover:bg-gray-50 hover:text-primary`}
                                             >
-                                                Photo Gallery
+                                                Mobile Application Development
+                                            </NavLink>
+                                        </li>
+                                        <li>
+                                            <NavLink
+                                                to="/photogallery"
+                                                onClick={closeMenu}
+                                                className={({ isActive }) => `block px-4 py-2 text-sm font-bold ${isActive ? 'text-primary active' : 'text-gray-600'} hover:bg-gray-50 hover:text-primary`}
+                                            >
+                                                Wordpress site Development
                                             </NavLink>
                                         </li>
                                     </ul>

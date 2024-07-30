@@ -9,7 +9,7 @@ function Footer() {
                     <div className="lg:pl-6 flex flex-col lg:flex-col items-center lg:items-center space-y-4 lg:space-y-4 mb-6 lg:mb-0">
                         <Link to="/" className="flex items-center mb-4 lg:mb-0">
                             <img
-                                src="./eternalbgl.png"
+                                src="./eternal.png"
                                 className="h-24 md:h-28 lg:h-32"
                                 alt="Logo"
                                 style={{ mixBlendMode: 'multiply' }}
@@ -19,7 +19,7 @@ function Footer() {
                             <span className="text-xs text-gray-600">
                                 © 2024{' '}
                                 <a href="https://etenraltechservices.com/" className="hover:underline text-blue-400 font-medium">
-                                    पशुवैद्यकीय, पशुसंवर्धन आणि दुग्ध व्यवस्थापन सेवा संघ
+                                    Etenral Tech Services
                                 </a>
                                 . All Rights Reserved.
                             </span>
@@ -76,7 +76,7 @@ function Footer() {
                                         target="_blank"
                                         rel="noreferrer"
                                     >
-                                        Intagram
+                                        Instagram
                                     </a>
                                 </li>
                             </ul>
