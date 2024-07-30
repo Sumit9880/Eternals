@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
-import Header from './components/Header/Header'
-import Footer from './components/Footer/Footer'
+import Header from './Components/Header.jsx'
+import Footer from './Components/Footer.jsx'
 import { Outlet, useLocation } from 'react-router-dom'
 
 function App() {
