@@ -5,12 +5,14 @@ import { Outlet, useLocation } from 'react-router-dom'
 
 function App() {
   const { pathname } = useLocation();
+  
   useEffect(() => {
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
     });
   }, [pathname]);
+
   return (
     <>
       <Header />

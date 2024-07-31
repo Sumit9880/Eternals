@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { RiArrowDropDownLine } from "react-icons/ri";
 import { FaAngleDown } from "react-icons/fa6";
 
 function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
-    const [serviceOpen, setServiceOpen] = useState(false);
+    const [subMenus, setSubMenus] = useState({
+        services: false,
+        industries: false,
+    });
 
     const toggleMenu = () => {
         setMenuOpen((prev) => !prev);
@@ -13,7 +15,7 @@ function Header() {
 
     const closeMenu = () => {
         setMenuOpen(false);
-        setServiceOpen(false);
+        setSubMenus(false);
     };
 
     return (
@@ -22,8 +24,8 @@ function Header() {
                 <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
                     <Link to="/" className="flex items-center">
                         <img
-                            src="./eternal.png"
-                            className="mr-3 h-12 rounded-full"
+                            src="./eternalh.png"
+                            className="mr-3 h-12 "
                             alt="Logo"
                             style={{ mixBlendMode: 'multiply' }}
                         />
@@ -63,32 +65,53 @@ function Header() {
                                     Home
                                 </NavLink>
                             </li>
-                            <li>
-                                <NavLink
-                                    to="/about"
-                                    onClick={closeMenu}
-                                    className={({ isActive }) => ` font-bold ${isActive ? 'text-primary active' : 'text-gray-600'} block py-2 pr-4 pl-3 duration-200 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-primary lg:p-0`}
-                                >
-                                    About
-                                </NavLink>
-                            </li>
-                            <li>
-                                <NavLink
-                                    to="/events"
-                                    onClick={closeMenu}
-                                    className={({ isActive }) => ` font-bold ${isActive ? 'text-primary active' : 'text-gray-600'} block py-2 pr-4 pl-3 duration-200 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-primary lg:p-0`}
-                                >
-                                    Events
-                                </NavLink>
-                            </li>
                             <li className="relative">
                                 <button
-                                    onClick={() => setServiceOpen((prev) => !prev)}
+                                    onClick={() => setSubMenus({ industries: false, services: !subMenus.services })}
                                     className="font-bold flex items-center text-gray-600 block py-2 pr-4 pl-3 duration-200 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-primary lg:p-0"
                                 >
                                     Services <FaAngleDown className='ml-1.5 mt-1.5' />
                                 </button>
-                                {serviceOpen && (
+                                {subMenus.services && (
+                                    <ul className="absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg">
+                                        <li>
+                                            <NavLink
+                                                to="/videogallery"
+                                                onClick={closeMenu}
+                                                className={({ isActive }) => `block px-4 py-2 text-sm font-bold ${isActive ? 'text-primary active' : 'text-gray-600'} hover:bg-gray-50 hover:text-primary`}
+                                            >
+                                                Web Application Development
+                                            </NavLink>
+                                        </li>
+                                        <li>
+                                            <NavLink
+                                                to="/photogallery"
+                                                onClick={closeMenu}
+                                                className={({ isActive }) => `block px-4 py-2 text-sm font-bold ${isActive ? 'text-primary active' : 'text-gray-600'} hover:bg-gray-50 hover:text-primary`}
+                                            >
+                                                Mobile Application Development
+                                            </NavLink>
+                                        </li>
+                                        <li>
+                                            <NavLink
+                                                to="/photogallery"
+                                                onClick={closeMenu}
+                                                className={({ isActive }) => `block px-4 py-2 text-sm font-bold ${isActive ? 'text-primary active' : 'text-gray-600'} hover:bg-gray-50 hover:text-primary`}
+                                            >
+                                                Wordpress site Development
+                                            </NavLink>
+                                        </li>
+                                    </ul>
+                                )}
+                            </li>
+                            <li className="relative">
+                                <button
+                                    onClick={() => setSubMenus({ services: false, industries: !subMenus.industries })}
+                                    className="font-bold flex items-center text-gray-600 block py-2 pr-4 pl-3 duration-200 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-primary lg:p-0"
+                                >
+                                    Industries <FaAngleDown className='ml-1.5 mt-1.5' />
+                                </button>
+                                {subMenus.industries && (
                                     <ul className="absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg">
                                         <li>
                                             <NavLink
@@ -122,11 +145,20 @@ function Header() {
                             </li>
                             <li>
                                 <NavLink
+                                    to="/about"
+                                    onClick={closeMenu}
+                                    className={({ isActive }) => ` font-bold ${isActive ? 'text-primary active' : 'text-gray-600'} block py-2 pr-4 pl-3 duration-200 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-primary lg:p-0`}
+                                >
+                                    About
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink
                                     to="/history"
                                     onClick={closeMenu}
                                     className={({ isActive }) => ` font-bold ${isActive ? 'bg-white text-primary' : 'bg-primary text-white'} block py-2 pr-4 pl-3 duration-200 border border-primary hover:bg-white hover:text-primary lg:py-2 lg:px-6 rounded-2xl`}
                                 >
-                                    History
+                                    Take a Service
                                 </NavLink>
                             </li>
                             <li>

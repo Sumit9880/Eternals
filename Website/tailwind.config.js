@@ -6,6 +6,14 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'poppins': ['Poppins', 'sans-serif'],
+        'montserrat': ['Montserrat', 'sans-serif'],
+        'roboto': ['Roboto', 'sans-serif'],
+        'inter': ['Inter', 'sans-serif'],
+        'nunito': ['Nunito', 'sans-serif'],
+        'dancing': ['Dancing Script', 'cursive'],
+      },
       colors: {
         'primary': '#024e92',
         'secondary': '#24a845',
