@@ -8,7 +8,7 @@ function Home() {
       duration: 1000,
     });
   }, []);
-
+ 
   return (
     <>
       <div className="relative w-full">
@@ -19,9 +19,15 @@ function Home() {
           data-aos="zoom-in-left"
           style={{ mixBlendMode: 'multiply' }}
         />
-        <div className="absolute inset-0 flex items-end justify-start p-8 sm:p-12">
-          <p className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary bg-white bg-opacity-70 p-4 rounded" data-aos="zoom-in-right">
-            INNOVATE<br /> INTEGRATE<br /> ELEVATE
+        <div className="absolute inset-0 flex flex-col items-start justify-end p-8 sm:p-12">
+          <p className="text-lg sm:text-2xl md:text-4xl font-bold text-gray-500 md:p-2 pb font-roboto" data-aos="zoom-in-right">
+            INNOVATE
+          </p>
+          <p className="text-lg sm:text-2xl md:text-4xl font-bold text-gray-500 md:p-2 pb font-roboto" data-aos="zoom-in-left">
+            INTEGRATE
+          </p>
+          <p className="text-lg sm:text-2xl md:text-4xl font-bold text-gray-500 md:p-2 pb font-roboto" data-aos="zoom-in-right">
+            ELEVATE
           </p>
         </div>
       </div>
