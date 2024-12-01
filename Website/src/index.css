@@ -5,6 +5,7 @@
 * {
   font-family: 'Poppins', sans-serif;
 }
+
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -28,6 +29,16 @@
   margin: 4px auto;
   width: 96%;
   background: #024e92;
+  border-radius: 18px;
+  height: 3px;
+}
+
+.heading_section::after {
+  content: '';
+  display: block;
+  margin: 4px auto;
+  width: 96%;
+  background: #ff9900;
   border-radius: 18px;
   height: 3px;
 }

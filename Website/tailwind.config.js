@@ -20,7 +20,7 @@ export default {
         'tertiary': '#cfe2f3',
         'quaternary': '#e6f6e1',
         'quinary': '#bd255b',
-        'senary': '#ffad19',
+        'senary': '#ff9900',
         'footer': '#fafcfa',
       }
     },
