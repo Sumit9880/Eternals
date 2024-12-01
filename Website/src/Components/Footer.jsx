@@ -40,15 +40,15 @@ function Footer() {
                                     </Link>
                                 </li>
                                 <li className="mb-2">
-                                    <Link to="/events" className="hover:underline">
-                                        Events
+                                    <Link to="/services" className="hover:underline">
+                                        Services
                                     </Link>
                                 </li>
-                                <li className="mb-2">
+                                {/* <li className="mb-2">
                                     <Link to="/history" className="hover:underline">
                                         History
                                     </Link>
-                                </li>
+                                </li> */}
                                 <li className="mb-2">
                                     <Link to="/contact" className="hover:underline">
                                         Contact Us

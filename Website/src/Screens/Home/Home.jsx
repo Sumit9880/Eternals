@@ -3,14 +3,63 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import ReasonCard from '../../Components/ReasonCard';
 import TechnologyCard from '../../Components/TechnologyCard';
-
+import TeamCard from '../../Components/TeamCard';
 
 function Home() {
   useEffect(() => {
     AOS.init({
-      duration: 1000,
+      duration: 600,  // Short duration for fast smooth animations
+      easing: 'ease-out-quint',  // Smooth easing
+      once: true,  // Animation triggers only once when visible
     });
   }, []);
+
+  const technologyData = [
+    {
+      category: "Front-End Technologies",
+      technologies: ["React.js"],
+      image: "./react.png"
+    },
+    {
+      category: "Mobile App Development",
+      technologies: ["React Native", "Android", "iOS"],
+      image: "./android.png"
+    },
+    {
+      category: "Back-End Technologies",
+      technologies: ["Node.js", "Express.js"],
+      image: "./nodejs2.png"
+    },
+    {
+      category: "Databases",
+      technologies: ["MySQL", "MongoDB"],
+      image: "./mysql.png"
+    },
+    {
+      category: "Cloud Services",
+      technologies: ["AWS", "Google Cloud"],
+      image: "./aws.png"
+    }
+  ];
+
+  const whyChooseUsData = [
+    {
+      "title": "Expert Team",
+      "description": "Our team of highly skilled developers and creative designers works passionately to craft cutting-edge web applications, ensuring excellence and innovation in every project.",
+      "image": "./Group.png"
+    },
+    {
+      "title": "Customer-Centric Approach",
+      "description": "We put your business at the heart of everything we do, delivering tailored solutions that align perfectly with your vision and exceed your expectations.",
+      "image": "./Group2.png"
+    },
+    {
+      "title": "Innovation and Quality",
+      "description": "We harness the power of the latest technologies and proven methodologies to deliver transformative web solutions with unmatched quality and innovation.",
+      "image": "./innovation.jpg"
+    }
+  ]
+
 
   return (
     <>
@@ -34,7 +83,7 @@ function Home() {
           </p>
         </div>
       </div>
-      <section className="flex flex-col items-center justify-center space-y-3 px-4 sm:px-6 mt-6 sm:mt-8">
+      <section className="flex flex-col items-center justify-center space-y-3 px-4 sm:px-6 mt-8">
         <div className="text-center px-6 sm:px-10 pb-3 w-full max-w-6xl mx-auto">
           <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold text-primary mb-4" data-aos="fade-up">
             Partnering for Progress, Delivering Results
@@ -76,76 +125,52 @@ function Home() {
         </div>
         <div className="flex items-center justify-center w-full sm:w-1/2" data-aos="zoom-in-left">
           <img
-            src="8270945_5439.jpg"
+            src="./8270945_5439.jpg"
             alt="banner"
             className="w-full h-auto object-cover rounded-lg"
           />
         </div>
       </section>
-      <section className="p-4 bg-white">
+      <section className="p-8 bg-white">
         <div className="max-w-6xl mx-auto">
           <h2
-            className="text-3xl font-bold text-center mb-8"
+            className="text-center mb-8 text-xl sm:text-2xl lg:text-3xl font-bold text-primary"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+          >
+            Why Choose Us?
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {whyChooseUsData.map((reason, index) => (
+              <ReasonCard
+                key={index}
+                title={reason.title}
+                description={reason.description}
+                image={reason.image}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+      
+      <section className="p-8 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <h2
+            className="text-center mb-8 text-xl sm:text-2xl lg:text-3xl font-bold text-primary"
             data-aos="fade-up"
             data-aos-duration="1000"
           >
             Technologies We Use
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <TechnologyCard
-              category="Front-End Technologies"
-              technologies={["React.js"]}
-              image="./react.png"
-            />
-            <TechnologyCard
-              category="Mobile App Development"
-              technologies={["React Native", "Android", "iOS"]}
-              image="./android.png"
-            />
-            <TechnologyCard
-              category="Back-End Technologies"
-              technologies={["Node.js", "Express.js"]}
-              image="./nodejs2.png"
-            />
-            <TechnologyCard
-              category="Databases"
-              technologies={["MySQL", "MongoDB"]}
-              image="./mysql.png"
-            />
-            <TechnologyCard
-              category="Cloud Services"
-              technologies={["AWS", "Google Cloud"]}
-              image="./aws.png"
-            />
-          </div>
-        </div>
-      </section>
-      <section className="p-4 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <h2
-            className="text-3xl font-bold text-center mb-8"
-            data-aos="fade-up"
-            data-aos-duration="1000"
-
-          >
-            Why Choose Us?
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <ReasonCard
-              title="Expert Team"
-              description="Our team of seasoned developers and designers are dedicated to delivering top-notch web applications tailored to your needs."
-              image="./expartTeam.png"
-            />
-            <ReasonCard
-              title="Customer-Centric Approach"
-              description="We prioritize your business goals and work closely with you to ensure the final product aligns with your vision."
-              image="./customer.png"
-            />
-            <ReasonCard
-              title="Innovation and Quality"
-              description="We leverage the latest technologies and best practices to deliver high-quality, innovative web solutions."
-              image="./innovation.jpg"
-            />
+            {technologyData.map((tech, index) => (
+              <TechnologyCard
+                key={index}
+                category={tech.category}
+                technologies={tech.technologies}
+                image={tech.image}
+              />
+            ))}
           </div>
         </div>
       </section>

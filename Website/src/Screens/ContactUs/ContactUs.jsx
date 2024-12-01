@@ -114,7 +114,7 @@ function ContactUs() {
                   </svg>
                 </div>
                 <div className="ml-4 text-m font-semibold">
-                  +91 9800067881
+                  +91 8618749880
                 </div>
               </div>
               <div className="flex items-center mt-2 text-gray-600">
@@ -137,7 +137,7 @@ function ContactUs() {
                   </svg>
                 </div>
                 <div className="ml-4 text-m font-semibold">
-                  ngovetprof@gmail.com
+                  eternaltechservices@gmail.com
                 </div>
               </div>
             </div>
@@ -156,7 +156,7 @@ function ContactUs() {
         </div>
         <div className="mt-6 rounded-xl shadow-xl p-4">
           <div className="justify-center items-center p-4 hover:scale-105 transition-transform duration-300 ease-in-out w-full">
-            <p className="text-2xl font-bold text-center text-secondary">Get In Touch With Us</p>
+            <p className="text-2xl font-bold text-center text-primary">Get In Touch With Us</p>
             <p className="text-sm font-bold text-center text-gray-700">Fill in the form to start a conversation</p>
           </div>
           <div className="flex flex-col md:flex-row justify-center items-center">
@@ -213,7 +213,7 @@ function ContactUs() {
                 <button
                   type="submit"
                   onClick={handleSubmit}
-                  className="w-full mt-6 bg-secondary hover:bg-senary text-white font-bold py-2 px-6 rounded-lg transition duration-300"
+                  className="w-full mt-6 bg-[#24a845] hover:bg-primary text-white font-bold py-2 px-6 rounded-lg transition duration-300"
                 >
                   Submit
                 </button>

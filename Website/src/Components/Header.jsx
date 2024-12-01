@@ -122,7 +122,7 @@ function Header() {
                                     </ul>
                                 )}
                             </li>
-                            <li className="relative">
+                            {/* <li className="relative">
                                 <button
                                     onClick={() => setSubMenus({ services: false, industries: !subMenus.industries })}
                                     className="font-semibold flex items-center text-gray-500 block py-2 pr-4 pl-3 duration-200 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-primary lg:p-0"
@@ -160,7 +160,7 @@ function Header() {
                                         </li>
                                     </ul>
                                 )}
-                            </li>
+                            </li> */}
                             <li>
                                 <NavLink
                                     to="/about"
